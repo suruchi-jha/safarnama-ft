@@ -95,6 +95,15 @@ export default function Home() {
           </motion.h1>
 
           <motion.p
+            className="hero-ai-title"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            AI-powered travel blog website for all your travel plans
+          </motion.p>
+
+          <motion.p
             className="hero-subtitle-large"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -121,6 +130,11 @@ export default function Home() {
           <div className="container">
             <div className="about-content">
               <h2 className="section-title text-center">About Safarnama</h2>
+              <h3 className="about-ai-title">Meet your AI Companion</h3>
+              <p className="about-text">
+                Our AI Companion helps you turn travel ideas into thoughtful plans, discover inspiring destinations,
+                and get useful guidance as you prepare for your next adventure.
+              </p>
               <p className="about-text">
                 Safarnama is a platform for storytellers, travelers, and creators to share their experiences with the
                 world. Whether you're documenting your travels, sharing your expertise, or simply expressing your
