@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom"
 import { Search } from "lucide-react"
 
 export default function Navbar({ isLoggedIn, username }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
   const [currentUser, setCurrentUser] = useState(null)
   const navigate = useNavigate()
@@ -30,13 +29,12 @@ export default function Navbar({ isLoggedIn, username }) {
     e.preventDefault()
     if (searchQuery.trim()) {
       navigate(`/search?query=${encodeURIComponent(searchQuery)}`)
-      setIsMenuOpen(false)
     }
   }
 
   const handleLogout = async () => {
     try {
-      const response = await fetch("/api/auth/logout", {
+      await fetch("/api/auth/logout", {
         method: "POST",
         credentials: "include",
       })

@@ -45,12 +45,16 @@ export function FloatingBalls({ genres }) {
         attempts++
 
         // Check if this position overlaps with any existing ball
-        const overlaps = ballsRef.current.some((existingBall) => {
+        let overlaps = false
+        for (const existingBall of ballsRef.current) {
           const dx = existingBall.x - x
           const dy = existingBall.y - y
           const distance = Math.sqrt(dx * dx + dy * dy)
-          return distance < minDistance
-        })
+          if (distance < minDistance) {
+            overlaps = true
+            break
+          }
+        }
 
         if (!overlaps || attempts >= maxAttempts) break
       } while (true)
