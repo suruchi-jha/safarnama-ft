@@ -43,5 +43,5 @@
   "devDependencies": {
     "tailwindcss": "^3.4.17"
   },
-  "proxy": "https://demo-application-latest.onrender.com"
+  "proxy": "http://localhost:8080"
 }

@@ -71,49 +71,50 @@ export default function Home() {
     <div className="min-height-screen">
       <Navbar isLoggedIn={!!currentUser} username={currentUser?.username} />
 
-      <div className="main-content">
-        {/* Hero Section with Parallax */}
-        <section className="hero-parallax-section">
-          <motion.div
-            className="hero-background"
-            style={{
-              backgroundImage: `url("/scenary.png")`,
-              y,
-              scale,
-            }}
+      {/* Hero Section with Parallax - Outside main-content to start from top */}
+      <section className="hero-parallax-section">
+        <motion.div
+          className="hero-background"
+          style={{
+            backgroundImage: `url("/240_F_1070085908_tQmScHXJafb0P1xuJ9wCgBwxNZyDZAui.jpg")`,
+            y,
+            scale,
+          }}
+        >
+          <div className="hero-overlay" />
+        </motion.div>
+
+        <motion.div className="hero-content-parallax" style={{ opacity }}>
+          <motion.h1
+            className="hero-title-large"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="hero-overlay" />
+            Safarnama
+          </motion.h1>
+
+          <motion.p
+            className="hero-subtitle-large"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            Share your journey, discover new stories
+          </motion.p>
+
+          <motion.div
+            className="hero-scroll-indicator"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            <ArrowDown size={32} />
           </motion.div>
+        </motion.div>
+      </section>
 
-          <motion.div className="hero-content-parallax" style={{ opacity }}>
-            <motion.h1
-              className="hero-title-large"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              Safarnama
-            </motion.h1>
-
-            <motion.p
-              className="hero-subtitle-large"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              Share your journey, discover new stories
-            </motion.p>
-
-            <motion.div
-              className="hero-scroll-indicator"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <ArrowDown size={32} />
-            </motion.div>
-          </motion.div>
-        </section>
+      <div className="main-content">
 
         {/* About Section */}
         <section className="section">

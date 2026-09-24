@@ -10,6 +10,7 @@ import Profile from "./pages/Profile"
 import Explore from "./pages/Explore"
 import GenreBlogs from "./pages/GenreBlogs"
 import SearchResults from "./pages/SearchResults"
+import AiCompanion from "./pages/AiCompanion"
 import "./index.css"
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/explore" element={<Explore />} />
         <Route path="/blogs/genre/:genreName" element={<GenreBlogs />} />
         <Route path="/search" element={<SearchResults />} />
+        <Route path="/dashboard/ai" element={<AiCompanion />} />
       </Routes>
     </Router>
   )

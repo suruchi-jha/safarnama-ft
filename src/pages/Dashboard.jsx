@@ -117,6 +117,16 @@ export default function Dashboard() {
                 </div>
               </div>
 
+              <div className="card mb-4">
+                <div className="card-body text-center">
+                  <h3 className="card-title">AI Travel Companion</h3>
+                  <p className="text-muted mb-3">Plan smarter trips with chat, memory, and blog-backed recommendations.</p>
+                  <Link to="/dashboard/ai" className="btn btn-primary w-full">
+                    Open AI Companion
+                  </Link>
+                </div>
+              </div>
+
               <div className="card">
                 <div className="card-header">
                   <h3 className="card-title">Explore Genres</h3>

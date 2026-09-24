@@ -1,9 +1,8 @@
 import axios from "axios"
 
-const API_BASE = process.env.REACT_APP_API_BASE_URL || "/api";
-// Create an axios instance with the base URL
+const API_BASE = process.env.REACT_APP_API_BASE_URL || (window.location.hostname === "localhost" ? "http://localhost:8080/api" : "/api")
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL || "/api", // This will work for both development and production
+  baseURL: API_BASE,
   headers: {
     "Content-Type": "application/json",
   },
@@ -267,6 +266,25 @@ export const blogService = {
 }
 
 // User services
+export const aiService = {
+  chat: async (message) => {
+    const response = await api.post("/ai/chat", { message })
+    return response.data
+  },
+  plan: async (payload) => {
+    const response = await api.post("/ai/plan", payload)
+    return response.data
+  },
+  history: async () => {
+    const response = await api.get("/ai/history")
+    return response.data
+  },
+  clearMemory: async () => {
+    const response = await api.post("/ai/clear-memory")
+    return response.data
+  },
+}
+
 export const userService = {
   getUserByUsername: async (username) => {
     try {
