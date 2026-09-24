@@ -15,7 +15,7 @@ export default function SearchResults() {
   const [username, setUsername] = useState("")
 
   useEffect(() => {
-    // Get username from localStorage or session
+    // Get username from localStorage or session  
     const storedUser = localStorage.getItem("user")
     if (storedUser) {
       try {
